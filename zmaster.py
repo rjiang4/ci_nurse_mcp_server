@@ -284,5 +284,9 @@ async def get_zeta_log(title: JobTitle, size: int = 1, from_idx: int = 0) -> Zet
 
 
 if __name__ == "__main__":
-    mcp.run(transport="streamable-http")
+    mcp.run(
+        transport="streamable-http",
+        host="0.0.0.0",
+        port="8081",
+    )
 
