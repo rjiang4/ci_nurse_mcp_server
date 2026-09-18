@@ -288,6 +288,6 @@ if __name__ == "__main__":
         transport="streamable-http",
         host="0.0.0.0",
         port=8081,
-        streamable_http_path="/",
+        #streamable_http_path="",  Define the root path here, by default is mcp
     )
 
