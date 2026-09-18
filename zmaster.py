@@ -140,14 +140,27 @@ async def get_zeta_link(title: JobTitle, size: int = 1, from_idx: int = 0) -> Ze
         Users may refer to jobs using simplified or shorthand names.
         When calling this tool, always resolve the user's shorthand to one
         of the exact allowed `title` values defined in the tool schema.
-        Never pass the user's shorthand directly as `title`.
+        Never pass the user's shorthand directly as `title`, it should match
+        one of the following:
+        SPA3_Infra_Nightly_SI_1,
+        SPA3_Infra_Nightly_SI_2,
+        SPA3 Infra Nightly SI 3,
+        SPA3_Infra_Nightly_SI_4,
+        SPA3_Infra_Nightly_SI_5,
+        SPA3_Infra_Nightly_SI_6,
+        
+        SPA3_Infra_Nightly_Domain_1,
+        SPA3 Infra Nightly Domain 2,
+        SPA3_Infra_Nightly_Domain_3,
+        SPA3_Infra_Nightly_Domain_4,
+
         For example:
             "SPA3_Infra_Nightly_SI_1" can be input as "spa3 s1 infra" or "SPA3 s1 nightly".
             "Sensor1" or "Sensor 1" means "SI 1".
         The following explaination should be followed along with the rules above:
-            "SVA_BQ_V436_Sensor_Integration_DOS_6.5" -> The Baseline Qualification (BQ) job for Sensor Integration 2 (SI 2).
-            "SVA_BQ_V436_Sensor_Integration" -> The Baseline Qualification (BQ) job for Sensor Integration 3 (SI 3).
-            "SVA_BQ_V436_Domain" -> The Baseline Qualification (BQ) job for the Domain 2.
+            "SVA BQ V436 Sensor Integration DOS 6.5" -> The Baseline Qualification (BQ) job for Sensor Integration 2 (SI 2).
+            "SVA BQ V436 Sensor Integration" -> The Baseline Qualification (BQ) job for Sensor Integration 3 (SI 3).
+            "SVA BQ V436 Domain" -> The Baseline Qualification (BQ) job for the Domain 2.
     
     Returns:
         ZetaLinkResponse:
@@ -222,14 +235,31 @@ async def get_zeta_log(title: JobTitle, size: int = 1, from_idx: int = 0) -> Zet
         Users may refer to jobs using simplified or shorthand names.
         When calling this tool, always resolve the user's shorthand to one
         of the exact allowed `title` values defined in the tool schema.
-        Never pass the user's shorthand directly as `title`.
+        Never pass the user's shorthand directly as `title`, it should match
+        one of the following:
+        SPA3_Infra_Nightly_SI_1,
+        SPA3_Infra_Nightly_SI_2,
+        SPA3 Infra Nightly SI 3,
+        SPA3_Infra_Nightly_SI_4,
+        SPA3_Infra_Nightly_SI_5,
+        SPA3_Infra_Nightly_SI_6,
+        
+        SPA3_Infra_Nightly_Domain_1,
+        SPA3 Infra Nightly Domain 2,
+        SPA3_Infra_Nightly_Domain_3,
+        SPA3_Infra_Nightly_Domain_4,
+        
+        SVA BQ V436 Sensor Integration DOS 6.5,
+        SVA BQ V436 Sensor Integration,
+        SVA BQ V436 Domain,
+
         For example:
             "SPA3_Infra_Nightly_SI_1" can be input as "spa3 s1 infra" or "SPA3 s1 nightly".
             "Sensor1" or "Sensor 1" means "SI 1".
         The following explaination should be followed along with the rules above:
-            "SVA_BQ_V436_Sensor_Integration_DOS_6.5" -> The Baseline Qualification (BQ) job for Sensor Integration 2 (SI 2).
-            "SVA_BQ_V436_Sensor_Integration" -> The Baseline Qualification (BQ) job for Sensor Integration 3 (SI 3).
-            "SVA_BQ_V436_Domain" -> The Baseline Qualification (BQ) job for the Domain 2.
+            "SVA BQ V436 Sensor Integration DOS 6.5" -> The Baseline Qualification (BQ) job for Sensor Integration 2 (SI 2).
+            "SVA BQ V436 Sensor Integration" -> The Baseline Qualification (BQ) job for Sensor Integration 3 (SI 3).
+            "SVA BQ V436 Domain" -> The Baseline Qualification (BQ) job for the Domain 2.
 
     Returns:
         ZetaLogResponse:
