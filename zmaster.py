@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from typing import Any, Literal
 
 import httpx2
-from mcp.server.mcpserver import MCPServer
+from mcp.server import MCPServer
 
 # Initialize MCPServer
 mcp = MCPServer("zmaster")
@@ -287,6 +287,7 @@ if __name__ == "__main__":
     mcp.run(
         transport="streamable-http",
         host="0.0.0.0",
-        port="8081",
+        port=8081,
+        streamable_http_path="/",
     )
 
