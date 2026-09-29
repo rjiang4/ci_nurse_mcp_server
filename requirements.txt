@@ -1,3 +1,4 @@
 pydantic
 httpx2
 mcp
+lxml
