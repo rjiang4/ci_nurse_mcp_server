@@ -188,30 +188,29 @@ def get_last_finsihed_zeta_run(title: JobTitle, size: int = 5, from_idx: int = 0
 
 
 @mcp.tool(name="get_test_result")
-def get_test_result(job_id: str, only_failed: bool = True) -> list[dict]:
+def get_test_result(job_id: str, only_failed: bool = False) -> list[dict]:
     """
     Get the test result overview for a test job.
 
     Use this tool as the FIRST STEP when analyzing a test job.
 
-    By default, it returns only failed test cases so the agent can quickly
-    identify which tests require further investigation.
+    By default, it returns all test cases, but you can set `only_failed` to True
+    to retrieve only the failed ones.
 
-    For each failed or relevant test case returned by this tool, use
+    For each test case returned by this tool, use
     `analyze_test_case(job_id, test_case)` to retrieve detailed logs and
     analysis context.
 
     Recommended workflow for whole-job analysis:
-        1. Call `get_test_result(job_id)` to identify failed test cases.
-        2. Call `analyze_test_case(job_id, test_case)` for each failed or
-           relevant test case.
+        1. Call `get_test_result(job_id)` to identify all test cases.
+        2. Call `analyze_test_case(job_id, test_case)` for each test case.
         3. Combine the results to summarize the overall job status, failures,
            and possible root causes.
 
     Args:
         job_id: The unique identifier of the test job.
         only_failed: If True, return only failed test cases.
-            If False, return all test case results.
+            If False, return all test case results. By default, it is False.
 
     Returns:
         A list of dictionaries with test case results, for example:

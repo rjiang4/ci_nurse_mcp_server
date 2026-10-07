@@ -127,6 +127,7 @@ class ZetaResponse(ToolResponse):
     source: dict | None = None
     zeta_link: str | None = None
     zeta_log: str | None = None
+    job_id: str | None = None
 
 
 # Tool functions for Zeta job link and log retrieval
