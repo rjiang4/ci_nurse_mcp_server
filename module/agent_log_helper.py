@@ -3,10 +3,10 @@ from log_db import LogRepository, init_db, ingest_job_bytes, JobArtifacts
 
 #TODO: Refine the log file name
 AGENT_LOG_NAME = {
-    "runner_log": "carbit.debug.json",
-    "server_log": "server_log_spa3_si.jsonl",
-    "test_results": "carbit.test_results.json",
-    "pytest_xml": "VCCTEST_ANALYSIS.xml",
+    "runner_log": "carbit_debug.json",
+    "server_log": "server_log.json",
+    "test_results": "carbit_test_results.json",
+    "pytest_xml": "carbit_analysis.xml",
 }
 
 DB_PATH = "sqlite:///C:/Tools/agent_server/database/agent_log.db"
